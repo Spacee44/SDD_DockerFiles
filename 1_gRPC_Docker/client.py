@@ -11,6 +11,7 @@ import saludo_pb2_grpc
 SERVIDOR = os.environ.get("SERVIDOR", "servidor:50051")
 
 
+
 def ciclo():
     canal = grpc.insecure_channel(SERVIDOR)
     stub = saludo_pb2_grpc.SaludoStub(canal)
@@ -19,7 +20,7 @@ def ciclo():
     cnt = 0
     while True:
         # wait_for_ready espera a que el servidor esté disponible
-        r = stub.Decir(saludo_pb2.Peticion(nombre=f"{nombre} #{cnt}"), wait_for_ready=True)
+        r = stub.Decir(saludo_pb2.Peticion(nombre=f"{CLIENTE} #{cnt}"), wait_for_ready=True)
         print(f"{cnt}: {r.mensaje}")
         cnt += 1
         time.sleep(1)
