@@ -1,1 +1,5 @@
 CAM_FROMT
+
+*.jpg
+*.pb2_grpc
+*.pb2

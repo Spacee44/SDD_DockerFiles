@@ -13,6 +13,8 @@ RUN apt-get update && apt-get install -y \
 
 WORKDIR /worksapce
 
+COPY saludo.proto server.py client.py *.jpg ./
+
 RUN git clone https://github.com/Spacee44/SDD_DockerFiles.git
 
 #HACER REPO
